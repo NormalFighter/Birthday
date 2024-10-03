@@ -1,0 +1,192 @@
+body {
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 217, 0, 0.815), rgba(255, 215, 0, 0.5));
+    overflow-x: hidden;
+}
+
+/* Slider container */
+.slider {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    /*overflow: hidden;*/
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    touch-action: pan-y; 
+}
+
+/* Each slide takes full screen size */
+.slide {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.rotate {
+    transform: rotate(-14deg);
+    margin: 50px 60% 0 35%; 
+}
+
+.cake img {
+    width: 100vw;
+    height:100vh;
+    max-width:300px;
+    max-height:350px;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    display:block;
+}
+/* Adjust button size and position for mobile */
+@media (max-width: 768px) {
+    .nav-btn {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Hide the prev button initially (on the landing page) */
+#prev-btn {
+    display: none;
+}
+img{
+    width:200px;
+    height:auto;
+    display:block;
+}
+h2{
+    font-size:2rem;
+    margin-bottom:0;
+    color:rgb(0, 17, 255);
+    margin-top:0;
+}
+h1{
+    font-size: 2.7rem;
+    margin-top:5px;
+    color:rgb(209, 13, 248);
+    font-family:'Playwrite AU QLD';
+}
+h3{
+    font-size:1.8rem;
+    font-family: 'Dancing Script', sans-serif;
+    font-weight:bolder;
+    margin:0;
+}
+
+/*--------------------------------------------------*/
+  @keyframes confetti-slow {
+    0% {
+      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+      transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+    }
+  }
+  @keyframes confetti-medium {
+    0% {
+      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+      transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
+    }
+  }
+  @keyframes confetti-fast {
+    0% {
+      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+      transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
+    }
+  }
+  .confetti-container {
+    perspective: 700px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .confetti {
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    border-radius: 0;
+  }
+  .confetti--animation-slow {
+    animation: confetti-slow 2.25s linear 1 forwards;
+  }
+  .confetti--animation-medium {
+    animation: confetti-medium 1.75s linear 1 forwards;
+  }
+  .confetti--animation-fast {
+    animation: confetti-fast 1.25s linear 1 forwards;
+  }
+  .js-container{
+    touch-action: pan-y;
+  }
+
+  /* Confetti styles (same as before) */
+.confetti-piece {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: hsl(50, 100%, 50%); /* Adjust color */
+    border-radius: 50%;
+    z-index: 999;
+    animation: confetti-fall 5s ease-in-out forwards;
+    opacity: 1;
+}
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg); /* Start from bottom */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(720deg); /* Move up while rotating */
+    }
+}
+
+/* Simplified animations for mobile devices */
+@media (max-width: 768px) {
+    @keyframes confetti-fall {
+        0% {
+            opacity: 1;
+            transform: translateY(0); /* Only translate */
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-80vh); /* Smaller translation */
+        }
+    }
+}

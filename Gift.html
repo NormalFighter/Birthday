@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A website to wish my bestie for her birthday">
+    <meta name="author" content="Riyas">
+    <title>Surprise</title>
+    <link rel="icon" href="assets/images/gift.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css"> <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="js-container">
+    <!-- Buttons for Navigation -->
+    <button id="prev-btn" class="nav-btn prev-btn">←</button>
+    <button id="next-btn" class="nav-btn next-btn">→</button>
+
+    <!-- Slider for the landing page and friends' wishes -->
+    <div class="slider">
+        <!-- Landing Page -->
+        <section class="slide" id="landing-page">
+            <div class="rotate"><h3>Wishing You</h3></div>
+            <h2><i>a Beautiful BiRTHDAY</i></h2>
+            <h1><i>Priya</i></h1>
+            <div class="cake"><img src="cake.jfif" alt="Cake photo"></div>
+        </section>
+
+        <!-- Friend 1 Slide -->
+        <section class="slide" id="friend1">
+            <img src="one.png" alt="Friend 1">
+            <audio id="audio1" src="first.mp3" preload="auto"></audio>
+        </section>
+
+        <!-- Friend 2 Slide -->
+        <section class="slide" id="friend2">
+            <img src="two.jpg" alt="Friend 2">
+            <audio id="audio2" src="second.mp3" preload="auto"></audio>
+        </section>
+
+        <!-- Friend 3 Slide -->
+        <section class="slide" id="friend3">
+            <img src="three.jpg" alt="Friend 3">
+            <audio id="audio3" src="third.mp3" preload="auto"></audio>
+        </section>
+
+        <!-- Add more slides for other friends... -->
+    </div>
+</div>
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
